@@ -1,0 +1,187 @@
+easy_admin:
+    # pagina instellingen
+    site_name: '<img src="/images/LGlogo.png" alt="La Garchère logo" class="logo">'
+
+    #rechts user
+    user:
+        display_name: false
+
+    list:
+        actions:
+            - {name: 'show', icon: 'eye', label: ''}
+            - {name: 'edit', icon: 'pen', label: ''}
+            - {name: 'delete', icon: 'trash-alt', label: ''}
+            - {name: 'new', icon: 'plus-circle', label: ''}
+
+    #styling
+    design:
+        assets:
+            css:
+                - '/css/admin.css'
+                - '/assets/bs-tags/bootstrap-tagsinput.css'
+            js:
+                - '/assets/bs-tags/bootstrap-tagsinput.js'
+
+        #aside
+        menu:
+            - {label: "Reservaties"}
+            - {entity: Reservatie, icon: "calendar"}
+            - {entity: User, icon: "user"}
+
+            - {label: "Kamers"}
+            - {entity: Kamer, icon: "bed"}
+            - {entity: Dienst, icon: "wifi"}
+            - {entity: KamerImage, icon: "images"}
+
+            - {label: "Activiteiten"}
+            - {entity: Activiteit, icon: "chess-rook"}
+            - {entity: Locatie, icon: "map-marker-alt"}
+
+            - {label: "Subscribe"}
+            - {entity: Subscribe, icon: "address-book"}
+
+
+    # Lijst van entity en volgorde
+    entities:
+        #RESERVATIES
+        Reservatie:
+            class: App\Entity\Reservatie
+            label: 'Reservaties'
+            help: 'Al de reservaties van het hotel staan in deze lijst.'
+            form:
+                fields:
+                    - kamer
+                    - aankomst
+                    - vertrek
+                    - goedgekeurd
+                    - user
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - id
+                    - kamer
+                    - vertrek
+                    - aankomst
+                    - user
+                    - goedgekeurd
+
+
+
+        User:
+            class: App\Entity\User
+            label: 'Users & Admin'
+            help: 'Hier kan je een lijst zien van al de users die geregistreerd hebben op la Garchère.'
+            form:
+                fields:
+                    - {property: 'voornaam'}
+                    - {property: 'achternaam'}
+                    - {property: 'telefoonnr', label: 'Telefoonnummer'}
+                    - {property: 'email'}
+                    - {property: 'password', label: 'Wachtwoord'}
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - id
+                    - email
+                    - voornaam
+                    - achternaam
+                    - {property: 'reservaties', label: 'Aantal reservaties'}
+
+
+
+        #KAMERS
+        Kamer:
+            class: App\Entity\Kamer
+            label: 'Kamers'
+            help: 'Dit is een lijst van al de kamers die het hotel beschikt.'
+            form:
+                fields:
+                    - {property: 'naam'}
+                    - {property: 'personen', label: 'Aantal personen'}
+                    - {property: 'oppervlakte'}
+                    - {property: 'omschrijving'}
+                    - {property: 'prijslaagseizoen', label: 'Prijs laagseizoen'}
+                    - {property: 'prijshoogseizoen', label: 'Prijs hoogseizoen'}
+                    - {property: 'diensts', label: 'Diensten', type: 'App\Form\DienstType', type_options: {attr: {data-role: 'tagsinput'}}}
+                    - {property: 'thumbnailFile', type: 'vich_image', label: 'Afbeelding kamer'}
+                    - {property: 'kamerImages', type: 'collection', type_options: {entry_type: 'App\Form\KamerImageType', by_reference: false}}
+            show:
+                fields:
+                    - naam
+                    - personen
+                    - oppervlakte
+                    - omschrijving
+                    - prijslaagseizoen
+                    - prijshoogseizoen
+                    - {property: 'thumbnail', type: 'image', base_path: '%uploads_path%', label: 'Hoofd afbeelding'}
+                    - {property: 'kamerImages', template: 'images.html.twig', label: 'Kamer afbeeldingen'}
+                    - {property: 'diensts', label: 'Diensten'}
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - naam
+                    - personen
+                    - {property: 'prijslaagseizoen', label: 'Prijs laagseizoen'}
+                    - {property: 'prijshoogseizoen', label: 'Prijs hoogseizoen'}
+                    - {property: 'thumbnail', type: 'image', base_path: '%uploads_path%'}
+
+        Dienst:
+          class: App\Entity\Dienst
+          label: 'Diensten'
+          help: 'Elke kamer heeft extra diensten die de kamer biedt.'
+          list:
+              sort: ['id', 'ASC']
+
+        KamerImage:
+            class: App\Entity\KamerImage
+            label: 'Afbeeldingen'
+            help: 'Elke kamer heeft een aparte pagina met al de afbeeldingen van deze kamer. Hier kan je al deze afbeeldingen aanschouwen.'
+            form:
+                fields:
+                    - kamer
+                    - {property: 'imageFile', type: 'vich_image', label: 'Afbeelding kamer'}
+            show:
+                fields:
+                    - kamer
+                    - {property: 'image', type: 'image', label: 'Afbeelding',  base_path: '%uploads_path%'}
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - id
+                    - kamer
+                    - {property: 'image', type: 'image', base_path: '%uploads_path%'}
+
+
+        #ACTIVITEITEN
+        Activiteit:
+            class: App\Entity\Activiteit
+            label: 'Activiteiten'
+            help: 'Alle verschillende activiteiten voor het doelpubliek in de omgeving van het hotel.'
+            list:
+                sort: ['id', 'ASC']
+
+        Locatie:
+            class: App\Entity\Locatie
+            label: 'Locaties'
+            help: 'Alle plaatsen van de verschillende activiteiten staan hier opgelijst.'
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - id
+                    - naam
+                    - km
+                    - activiteit
+
+
+
+        #SUBSCRIBE
+        Subscribe:
+            class: App\Entity\Subscribe
+            help: 'Hier zie je een lijst met al de mensen die graag een nieuwsbrief van la Garchère ontvangen.'
+            list:
+                sort: ['id', 'ASC']
+
+
+
+
+

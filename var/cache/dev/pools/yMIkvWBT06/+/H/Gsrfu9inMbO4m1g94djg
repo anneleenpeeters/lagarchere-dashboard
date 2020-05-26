@@ -1,0 +1,3 @@
+<?php //route_name_53e40c12d8e15b3da42fb63a27f1451c
+
+return [PHP_INT_MAX, 'api_kamers_get_item'];
