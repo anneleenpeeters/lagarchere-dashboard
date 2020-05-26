@@ -1,3 +1,0 @@
-<?php //route_name_ca6df471949a2ebc2692e392a1b97587
-
-return [PHP_INT_MAX, 'api_reservaties_get_item'];
