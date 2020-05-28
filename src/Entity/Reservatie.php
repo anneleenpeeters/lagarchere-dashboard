@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
- *     collectionOperations={"post"},
+ *     collectionOperations={"post", "get"},
  *     itemOperations={"get"}
  * )
  * @ORM\Entity(repositoryClass=ReservatieRepository::class)

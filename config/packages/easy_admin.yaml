@@ -1,6 +1,6 @@
 easy_admin:
     # pagina instellingen
-    site_name: '<img src="/images/LGlogo.png" alt="La Garchère logo" class="logo">'
+    site_name: '<img src="images/LGlogo.png" alt="La Garchère logo" class="logo">'
 
     #rechts user
     user:
@@ -17,10 +17,10 @@ easy_admin:
     design:
         assets:
             css:
-                - '/css/admin.css'
-                - '/assets/bs-tags/bootstrap-tagsinput.css'
+                - 'css/admin.css'
+                - 'assets/bs-tags/bootstrap-tagsinput.css'
             js:
-                - '/assets/bs-tags/bootstrap-tagsinput.js'
+                - 'assets/bs-tags/bootstrap-tagsinput.js'
 
         #aside
         menu:

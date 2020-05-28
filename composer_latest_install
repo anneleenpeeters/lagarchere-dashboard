@@ -1,0 +1,42 @@
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+Package operations: 55 installs, 29 updates, 11 removals
+  - Removing twig/extra-bundle (v3.0.3)
+  - Removing symfony/twig-pack (v1.0.0)
+  - Removing symfony/monolog-bundle (v3.5.0)
+  - Removing symfony/monolog-bridge (v5.0.5)
+  - Removing symfony/http-client-contracts (v2.0.1)
+  - Removing symfony/http-client (v5.0.5)
+  - Removing symfony/debug-bundle (v5.0.5)
+  - Removing sensiolabs/security-checker (v6.0.3)
+  - Removing sensio/framework-extra-bundle (v5.5.3)
+  - Removing monolog/monolog (2.0.2)
+  - Removing easycorp/easy-log-handler (v1.0.9)
+  - Updating symfony/flex (v1.6.2 => v1.6.3): Loading from cache
+  - Installing ocramius/package-versions (1.5.1): Loading from cache
+  - Updating psr/log (1.1.2 => 1.1.3): Loading from cache
+  - Updating symfony/polyfill-mbstring (v1.14.0 => v1.17.0): Loading from cache
+  - Updating symfony/polyfill-intl-idn (v1.14.0 => v1.17.0): Loading from cache
+  - Updating symfony/mime (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/polyfill-php73 (v1.14.0 => v1.17.0): Loading from cache
+  - Updating symfony/var-dumper (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/var-exporter (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/yaml (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/twig-bridge (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/http-foundation (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/event-dispatcher (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/error-handler (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/http-kernel (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/filesystem (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/config (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/twig-bundle (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/routing (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/finder (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/dependency-injection (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/cache (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/framework-bundle (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/web-profiler-bundle (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/process (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/console (v5.0.5 => v5.0.8): Loading from cache
+  - Updating symfony/web-server-bundle (v4.4.5 => v4.4.8): Loading from cache
+  - Installing symfony/validator (v5.0.8): Loading from cache

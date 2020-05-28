@@ -6,11 +6,10 @@
 
 * {
     box-sizing: border-box;
-    outline: none;
 }
 
 body {
-    background-image: url("../images/home_main.jpg");
+    background-image: url("/images/home_main.jpg");
     background-size: cover;
     font-family: 'Hind', sans-serif;
 }
@@ -50,8 +49,6 @@ input{
     border-bottom: 1px solid black;
     box-shadow: inherit;
     width: 80%;
-    font-family: 'Hind', sans-serif;
-    color: #1F1F1F;
 }
 
 input::placeholder{
