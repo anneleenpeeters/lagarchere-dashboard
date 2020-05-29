@@ -157,6 +157,7 @@ textarea, .bootstrap-tagsinput {
 .form-widget input.form-control, textarea, .bootstrap-tagsinput {
     border-bottom: 1px solid #1F1F1F !important;
     border-radius: inherit !important;
+    max-width: inherit !important;
 }
 
 .select2-container--bootstrap .select2-selection {

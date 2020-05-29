@@ -18,9 +18,7 @@ easy_admin:
         assets:
             css:
                 - 'css/admin.css'
-                - 'assets/bs-tags/bootstrap-tagsinput.css'
-            js:
-                - 'assets/bs-tags/bootstrap-tagsinput.js'
+
 
         #aside
         menu:
@@ -102,8 +100,8 @@ easy_admin:
                     - {property: 'omschrijving'}
                     - {property: 'prijslaagseizoen', label: 'Prijs laagseizoen'}
                     - {property: 'prijshoogseizoen', label: 'Prijs hoogseizoen'}
-                    - {property: 'diensts', label: 'Diensten', type: 'App\Form\DienstType', type_options: {attr: {data-role: 'tagsinput'}}}
-                    - {property: 'thumbnailFile', type: 'vich_image', label: 'Afbeelding kamer'}
+                    - {property: 'diensts', label: 'Diensten'}
+                    - {property: 'thumbnailFile', type: 'vich_image', label: 'Hoofdafbeelding kamer'}
                     - {property: 'kamerImages', type: 'collection', type_options: {entry_type: 'App\Form\KamerImageType', by_reference: false}}
             show:
                 fields:

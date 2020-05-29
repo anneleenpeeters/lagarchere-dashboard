@@ -7,12 +7,15 @@ use App\Repository\KamerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ApiResource(
  *     collectionOperations={"get"},
- *     itemOperations={"get"}
+ *     itemOperations={"get"},
+ *     normalizationContext={"groups"={"kamer:read"}}
+
  * )
  * @ORM\Entity(repositoryClass=KamerRepository::class)
  * @Vich\Uploadable()
@@ -28,31 +31,37 @@ class Kamer
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("kamer:read")
      */
     private $naam;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("kamer:read")
      */
     private $personen;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("kamer:read")
      */
     private $oppervlakte;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("kamer:read")
      */
     private $omschrijving;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("kamer:read")
      */
     private $prijslaagseizoen;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("kamer:read")
      */
     private $prijshoogseizoen;
 
@@ -64,11 +73,13 @@ class Kamer
     /**
      * @ORM\ManyToMany(targetEntity=Dienst::class, mappedBy="kamer", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("kamer:read")
      */
     private $diensts;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("kamer:read")
      */
     private $thumbnail;
 
