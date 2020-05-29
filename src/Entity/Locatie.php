@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\LocatieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
@@ -24,26 +25,31 @@ class Locatie
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("activiteit:read")
      */
     private $naam;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("activiteit:read")
      */
     private $km;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("activiteit:read")
      */
     private $adres;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("activiteit:read")
      */
     private $website;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("activiteit:read")
      */
     private $omschrijving;
 

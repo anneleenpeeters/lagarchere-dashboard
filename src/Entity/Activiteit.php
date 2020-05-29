@@ -7,11 +7,13 @@ use App\Repository\ActiviteitRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
  *     collectionOperations={"get"},
  *     itemOperations={"get"},
+ *     normalizationContext={"groups"={"activiteit:read"}}
  * )
  * @ORM\Entity(repositoryClass=ActiviteitRepository::class)
  */
@@ -26,11 +28,13 @@ class Activiteit
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("activiteit:read")
      */
     private $titel;
 
     /**
      * @ORM\OneToMany(targetEntity=Locatie::class, mappedBy="activiteit")
+     * @Groups("activiteit:read")
      */
     private $locaties;
 
