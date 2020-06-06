@@ -6,14 +6,12 @@ use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
 
-//require __DIR__.’/../vendor/autoload.php';
 
+//for LOCAL development
+//require __DIR__.'/../config/bootstrap.php';
 
-//for local development
-require __DIR__.'/../config/bootstrap.php';
-
-////for deployment system 3
-//require 'system/config/bootstrap.php';
+////for DEPLOY system 3
+require 'system/config/bootstrap.php';
 
 
 //require dirname(__DIR__).'/config/bootstrap.php';
@@ -32,12 +30,12 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
     Request::setTrustedHosts([$trustedHosts]);
 }
 
-//for local development
+//for LOCAL development
 (new Dotenv())->load(__DIR__.'/../.env.local');
 
-////for deployment system 3
-//(new Dotenv())->load(__DIR__.'/system/.env.local');
-//////}
+//for DEPLOY system 3
+(new Dotenv())->load(__DIR__.'/system/.env.local');
+
 
 
 $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);

@@ -116,6 +116,7 @@ class Kamer
 
     /**
      * @ORM\OneToMany(targetEntity=KamerImage::class, mappedBy="kamer", cascade={"persist"})
+     * @Groups("kamer:read")
      */
     private $kamerImages;
 

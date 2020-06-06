@@ -7,6 +7,7 @@ use App\Repository\KamerImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ApiResource(
  *     collectionOperations={"get"},
@@ -26,6 +27,7 @@ class KamerImage
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("kamer:read")
      */
     private $image;
 

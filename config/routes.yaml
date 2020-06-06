@@ -1,5 +1,5 @@
 login_check:
-    path:     /api/login_check 
+    path:     /api/login_check
     methods:  [POST]
 
 easy_admin_bundle:

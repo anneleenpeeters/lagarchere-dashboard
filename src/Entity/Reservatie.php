@@ -29,14 +29,12 @@ class Reservatie
     /**
      * @ORM\Column(type="date")
      * @Assert\NotBlank(message="Dit veld is verplicht.")
-     * @Groups({"user:read"})
      */
     private $aankomst;
 
     /**
      * @ORM\Column(type="date")
      * @Assert\NotBlank(message="Dit veld is verplicht.")
-     * @Groups({"user:read"})
      */
     private $vertrek;
 
@@ -45,7 +43,6 @@ class Reservatie
      * @ORM\ManyToOne(targetEntity=Kamer::class, inversedBy="reservaties", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      * @Assert\NotBlank(message="Dit veld is verplicht.")
-     * @Groups({"user:read"})
      */
     private $kamer;
 
