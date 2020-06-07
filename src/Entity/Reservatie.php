@@ -63,7 +63,6 @@ class Reservatie
         $this->users = new ArrayCollection();
         $this->vertrek = new \DateTime();
         $this->aankomst = new \DateTime();
-
     }
 
     public function getId(): ?int
