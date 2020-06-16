@@ -54,12 +54,11 @@ easy_admin:
                     - goedgekeurd
                     - user
             list:
-                sort: ['id', 'ASC']
+                sort: ['aankomst', 'ASC']
                 fields:
-                    - id
-                    - kamer
-                    - vertrek
                     - aankomst
+                    - vertrek
+                    - kamer
                     - user
                     - goedgekeurd
 
@@ -67,19 +66,19 @@ easy_admin:
 
         User:
             class: App\Entity\User
-            label: 'Users & Admin'
+            label: 'Users'
             help: 'Hier kan je een lijst zien van al de users die geregistreerd hebben op la Garchère.'
+            disabled_actions: ['new']
             form:
                 fields:
-                    - {property: 'voornaam'}
-                    - {property: 'achternaam'}
+                    - voornaam
+                    - achternaam
+                    - email
                     - {property: 'telefoonnr', label: 'Telefoonnummer'}
-                    - {property: 'email'}
-                    - {property: 'password', label: 'Wachtwoord'}
+
             list:
-                sort: ['id', 'ASC']
+                sort: ['id', 'DESC']
                 fields:
-                    - id
                     - email
                     - voornaam
                     - achternaam
@@ -128,7 +127,9 @@ easy_admin:
           label: 'Diensten'
           help: 'Elke kamer heeft extra diensten die de kamer biedt.'
           list:
-              sort: ['id', 'ASC']
+            sort: ['id', 'ASC']
+            fields:
+                - omschrijving
 
         KamerImage:
             class: App\Entity\KamerImage
@@ -138,16 +139,16 @@ easy_admin:
                 fields:
                     - kamer
                     - {property: 'imageFile', type: 'vich_image', label: 'Afbeelding kamer'}
+
             show:
                 fields:
                     - kamer
                     - {property: 'image', type: 'image', label: 'Afbeelding',  base_path: '%uploads_path%'}
             list:
-                sort: ['id', 'ASC']
                 fields:
-                    - id
                     - kamer
                     - {property: 'image', type: 'image', base_path: '%uploads_path%'}
+
 
 
         #ACTIVITEITEN
@@ -157,6 +158,9 @@ easy_admin:
             help: 'Alle verschillende activiteiten voor het doelpubliek in de omgeving van het hotel.'
             list:
                 sort: ['id', 'ASC']
+                fields:
+                    - titel
+                    - locaties
 
         Locatie:
             class: App\Entity\Locatie
@@ -165,9 +169,8 @@ easy_admin:
             list:
                 sort: ['id', 'ASC']
                 fields:
-                    - id
                     - naam
-                    - km
+                    - website
                     - activiteit
 
 
@@ -178,6 +181,8 @@ easy_admin:
             help: 'Hier zie je een lijst met al de mensen die graag een nieuwsbrief van la Garchère ontvangen.'
             list:
                 sort: ['id', 'ASC']
+                fields:
+                    - email
 
 
 

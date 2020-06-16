@@ -22,6 +22,7 @@ class Dienst
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("kamer:read")
      */
     private $id;
 
