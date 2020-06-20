@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\MailController;
 use App\Repository\SubscribeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -16,6 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Subscribe
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -42,7 +44,8 @@ class Subscribe
     public function setEmail(string $email): self
     {
         $this->email = $email;
-
+        $mailer = new MailController();
+        $mailer->sendMailSubscribe($email);
         return $this;
     }
 

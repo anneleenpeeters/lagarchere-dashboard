@@ -31,7 +31,7 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 }
 
 //for LOCAL development
-(new Dotenv())->load(__DIR__.'/../.env.local');
+//(new Dotenv())->load(__DIR__.'/../.env.local');
 
 //for DEPLOY system 3
 (new Dotenv())->load(__DIR__.'/system/.env.local');
