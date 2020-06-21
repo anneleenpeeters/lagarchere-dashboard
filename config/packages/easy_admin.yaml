@@ -35,6 +35,9 @@ easy_admin:
             - {entity: Activiteit, icon: "chess-rook"}
             - {entity: Locatie, icon: "map-marker-alt"}
 
+            - {label: "Vragen"}
+            - {entity: Contact, icon: "question-circle", label: 'Gestelde vragen'}
+
             - {label: "Subscribe"}
             - {entity: Subscribe, icon: "address-book"}
 
@@ -173,6 +176,19 @@ easy_admin:
                     - website
                     - activiteit
 
+
+        #CONTACT
+        Contact:
+            class: App\Entity\Contact
+            disabled_actions: ['new']
+            help: 'Hier zie je een lijst met al de gestelde vragen.'
+            list:
+                sort: ['id', 'ASC']
+                fields:
+                    - voornaam
+                    - achternaam
+                    - email
+                    - responded
 
 
         #SUBSCRIBE

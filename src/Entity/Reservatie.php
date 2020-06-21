@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use App\Controller\MailController;
 
 /**
  * @ApiResource(
@@ -81,7 +82,8 @@ class Reservatie
     public function setAankomst(\DateTimeInterface $aankomst): self
     {
         $this->aankomst = $aankomst;
-
+        $mailer = new MailController();
+        $mailer->sendMailReservatie();
         return $this;
     }
 
@@ -132,5 +134,9 @@ class Reservatie
 
         return $this;
     }
+
+
+
+
 
 }
