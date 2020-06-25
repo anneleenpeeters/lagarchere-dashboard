@@ -20,6 +20,7 @@ class Locatie
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups("activiteit:read")
      */
     private $id;
 

@@ -271,7 +271,7 @@ class Kamer
         return $this->thumbnail;
     }
 
-    public function setThumbnail(?string $thumbnail): self
+    public function setThumbnail(?string $thumbnail)
     {
         $this->thumbnail = $thumbnail;
 

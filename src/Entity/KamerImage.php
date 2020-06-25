@@ -96,7 +96,7 @@ class KamerImage
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image)
     {
         $this->image = $image;
 
@@ -125,6 +125,11 @@ class KamerImage
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getImage();
     }
 
 
